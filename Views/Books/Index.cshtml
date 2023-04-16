@@ -22,13 +22,13 @@
                 @Html.DisplayNameFor(model => model.Count)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AddedID)
+                @Html.DisplayNameFor(model => model.AddedUser)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.lastEditID)
+                @Html.DisplayNameFor(model => model.LastEditUser)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.editDate)
+                @Html.DisplayNameFor(model => model.EditDate)
             </th>
             <th></th>
         </tr>
@@ -46,13 +46,13 @@
                 @Html.DisplayFor(modelItem => item.Count)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AddedID)
+                @Html.DisplayFor(modelItem => item.AddedUser)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.lastEditID)
+                @Html.DisplayFor(modelItem => item.LastEditUser)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.editDate)
+                @Html.DisplayFor(modelItem => item.EditDate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.BookID">Edit</a> |

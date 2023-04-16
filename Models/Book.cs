@@ -14,14 +14,15 @@ namespace LibraryWeb.Models
         [DisplayName("Description")]
         public string? BookDescription { get; set; }
         [DisplayName("# of Copies")]
+        [Required(ErrorMessage = "Please input the amount of copies"), Range(0, 1000, ErrorMessage = "Book count must be between 0 and 1000")]
         public int? Count { get; set; }
 
         //Should be more automated (UserID and data automatically applied)
         [DisplayName("Added By")]
-        public int AddedID { get; set; }
+        public string? AddedUser { get; set; }
         [DisplayName("Edited By")]
-        public int? lastEditID { get; set; }
+        public string? LastEditUser { get; set; }
         [DisplayName("Last Edited")]
-        public DateTime editDate { get; set; }
+        public DateTime EditDate { get; set; }
     }
 }
