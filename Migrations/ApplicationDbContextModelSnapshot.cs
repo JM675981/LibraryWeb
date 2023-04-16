@@ -4,18 +4,16 @@ using LibraryWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace LibraryWeb.Data.Migrations
+namespace LibraryWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230416103540_initial")]
-    partial class initial
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,8 +104,9 @@ namespace LibraryWeb.Data.Migrations
                     b.Property<bool>("IsLoaned")
                         .HasColumnType("bit");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("LoanID");
 
@@ -146,19 +145,19 @@ namespace LibraryWeb.Data.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "693e9bd9-ff93-43c5-9716-f3249a56361e",
+                            ConcurrencyStamp = "bea87146-4717-44c0-9285-08374b46655f",
                             Name = "User"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "607d2f42-0a96-440e-bba2-eb9f336ececa",
+                            ConcurrencyStamp = "6bbfd87f-9287-4e25-b816-28e1f07f103e",
                             Name = "Librarian"
                         },
                         new
                         {
                             Id = "3",
-                            ConcurrencyStamp = "cadf916f-fe6c-4463-a9b0-8ccbbaaec989",
+                            ConcurrencyStamp = "c2596264-1950-4e6b-9fd3-a14663e3c27b",
                             Name = "Admin"
                         });
                 });
@@ -257,15 +256,15 @@ namespace LibraryWeb.Data.Migrations
                         {
                             Id = "38b276e9-b56f-404f-9571-86c49ab67ac7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6c433734-fd38-4ac9-b330-358b5ca6818e",
+                            ConcurrencyStamp = "3e88eb96-f593-4ab5-ac97-58ecb3a04ef3",
                             Email = "Alucard@Bellm.ont",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
                             NormalizedEmail = "ALUCARD@BELLM.ONT",
                             NormalizedUserName = "ALUCARD@BELLM.ONT",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKaGJBa5r1CrNOhfTmGGm5yRJUXkEV54S5IKQ80pRIuOV5o+E0wmp+sbhBqWaol86w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMLOgJvzYjeWW2+Dt8JShcVrKXHbDQM5YuwMReFvRs4TVfXLKd+id7CzKH+75FzGTA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "523bda9b-6b4f-43fd-acf3-4a5b20b196df",
+                            SecurityStamp = "2c607978-4327-400c-a8e5-2bec62fec660",
                             TwoFactorEnabled = false,
                             UserName = "Alucard@Bellm.ont"
                         },
@@ -273,15 +272,15 @@ namespace LibraryWeb.Data.Migrations
                         {
                             Id = "ba9c50d2-92ad-448a-aff3-a9ec499b44f0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "af825618-1d53-4a6a-80b2-2adc9e183955",
+                            ConcurrencyStamp = "54940cd6-4259-4e49-b30d-7e02c75519df",
                             Email = "Richter@Bellm.ont",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
                             NormalizedEmail = "RICHTER@BELLM.ONT",
                             NormalizedUserName = "RICHTER@BELLM.ONT",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHRUP5p/bTu7xSfgmUsTiev430/spNa/WjMsqoEhmeu9FFIwGlnrbSag8cM/kkG7yQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGplI3UMB0y4tM2uh74baJK/QFOa87DdtZMEkeoPXwZJFJscMOM0H+MMfiEtwmD3cw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "606a22bc-5b4a-4b73-a0bb-95399dc183a9",
+                            SecurityStamp = "66ba9490-ebea-423d-87cb-e814ae5997ca",
                             TwoFactorEnabled = false,
                             UserName = "Richter@Bellm.ont"
                         },
@@ -289,15 +288,15 @@ namespace LibraryWeb.Data.Migrations
                         {
                             Id = "e2eaf6fb-be20-4b9b-a071-c17566a4a6f8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9a83ea55-f3e5-40a1-9a1e-d19e20f2fd05",
+                            ConcurrencyStamp = "1ff8be6b-9b1d-4a8e-a6e9-e6f5a1233fb1",
                             Email = "Dracula@Bellm.ont",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
                             NormalizedEmail = "DRACULA@BELLM.ONT",
                             NormalizedUserName = "DRACULA@BELLM.ONT",
-                            PasswordHash = "AQAAAAEAACcQAAAAECJnq9R8xvlsep3yiu19ZEesdditrQk/QyegDkQX9ZzDXBLS8A95Dri75heqZBC0BQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJA0J0PENPkGxMyKOIzljJpQdrYe3R94R/gwzZ+OzIC35dyIzWvHM3HeIAsxYmVEFw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b84ddbd9-48c0-42cb-8185-9a854c31294d",
+                            SecurityStamp = "a3a30e8c-c887-4b58-9f2c-e51c42692dac",
                             TwoFactorEnabled = false,
                             UserName = "Dracula@Bellm.ont"
                         });

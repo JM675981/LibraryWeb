@@ -57,7 +57,7 @@ namespace LibraryWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("LoanID,BookID,UserID,DateLoaned,DueDate,IsLoaned")] Loan loan)
+        public async Task<IActionResult> Create([Bind("LoanID,BookID,Username,DateLoaned,DueDate,IsLoaned")] Loan loan)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace LibraryWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("LoanID,BookID,UserID,DateLoaned,DueDate,IsLoaned")] Loan loan)
+        public async Task<IActionResult> Edit(int id, [Bind("LoanID,BookID,Username,DateLoaned,DueDate,IsLoaned")] Loan loan)
         {
             if (id != loan.LoanID)
             {

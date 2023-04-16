@@ -13,7 +13,7 @@ namespace LibraryWeb.Models
         public Book Book { get; set; }
         [Required(ErrorMessage = "Please select a user")]
         [DisplayName("User")]
-        public int UserID { get; set; }
+        public string Username { get; set; }
 
         //Some automation with some manual input
         [Required(ErrorMessage = "Please enter the date loaned")]
