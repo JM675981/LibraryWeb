@@ -26,7 +26,7 @@ namespace LibraryWeb.Data
                 LockoutEnabled = true,
             };
             PasswordHasher<IdentityUser> passwordHasher = new PasswordHasher<IdentityUser>();
-            user.PasswordHash = passwordHasher.HashPassword(user, "");
+            user.PasswordHash = passwordHasher.HashPassword(user, "P@ssw0rd");
             builder.Entity<IdentityUser>().HasData(user);
 
             user = new IdentityUser
@@ -40,7 +40,7 @@ namespace LibraryWeb.Data
                 LockoutEnabled = true,
             };
             passwordHasher = new PasswordHasher<IdentityUser>();
-            user.PasswordHash = passwordHasher.HashPassword(user, "");
+            user.PasswordHash = passwordHasher.HashPassword(user, "P@ssw0rd");
             builder.Entity<IdentityUser>().HasData(user);
 
             user = new IdentityUser
@@ -54,7 +54,7 @@ namespace LibraryWeb.Data
                 LockoutEnabled = true,
             };
             passwordHasher = new PasswordHasher<IdentityUser>();
-            user.PasswordHash = passwordHasher.HashPassword(user, "");
+            user.PasswordHash = passwordHasher.HashPassword(user, "P@ssw0rd");
             builder.Entity<IdentityUser>().HasData(user);
         }
 
