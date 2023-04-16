@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using LibraryWeb.Models;
 
 namespace LibraryWeb.Data
 {
@@ -9,5 +10,7 @@ namespace LibraryWeb.Data
             : base(options)
         {
         }
+        public DbSet<LibraryWeb.Models.Book>? Book { get; set; }
+        public DbSet<LibraryWeb.Models.Loan>? Loan { get; set; }
     }
 }

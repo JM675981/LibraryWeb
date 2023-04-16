@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LibraryWeb.Models
 {
-    public class Loaned
+    public class Loan
     {
         [Key]
         public int LoanID { get; set; }
