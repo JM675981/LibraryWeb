@@ -60,6 +60,9 @@ namespace LibraryWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                book.AddedUser = User.Identity.Name;
+                book.EditDate = DateTime.Now;
+
                 _context.Add(book);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -99,6 +102,9 @@ namespace LibraryWeb.Controllers
             {
                 try
                 {
+                    book.LastEditUser = User.Identity.Name;
+                    book.EditDate = DateTime.Now;
+
                     _context.Update(book);
                     await _context.SaveChangesAsync();
                 }

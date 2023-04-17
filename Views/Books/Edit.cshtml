@@ -13,6 +13,10 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="BookID" />
+            <input type="hidden" asp-for="AddedUser" />
+            <input type="hidden" asp-for="LastEditUser" />
+            <input type="hidden" asp-for="EditDate" />
+
             <div class="form-group">
                 <label asp-for="BookTitle" class="control-label"></label>
                 <input asp-for="BookTitle" class="form-control" />
@@ -21,37 +25,19 @@
             <div class="form-group">
                 <label asp-for="BookDescription" class="control-label"></label>
                 <input asp-for="BookDescription" class="form-control" />
-                <span asp-validation-for="BookDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Count" class="control-label"></label>
                 <input asp-for="Count" class="form-control" />
                 <span asp-validation-for="Count" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="AddedUser" class="control-label"></label>
-                <input asp-for="AddedUser" class="form-control" />
-                <span asp-validation-for="AddedUser" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastEditUser" class="control-label"></label>
-                <input asp-for="LastEditUser" class="form-control" />
-                <span asp-validation-for="LastEditUser" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EditDate" class="control-label"></label>
-                <input asp-for="EditDate" class="form-control" />
-                <span asp-validation-for="EditDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index">Cancel</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
