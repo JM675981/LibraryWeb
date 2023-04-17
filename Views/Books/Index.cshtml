@@ -18,6 +18,10 @@
 <table class="table">
     <thead>
         <tr>
+            @if (signInManager.IsSignedIn(User))
+            {
+                <th></th>
+            }
             <th>
                 @Html.DisplayNameFor(model => model.BookTitle)
             </th>
@@ -43,6 +47,13 @@
         @foreach (var item in Model)
         {
             <tr>
+
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Loans" asp-action="Create">Check Out</a>
+                    </td>
+                }
                 <td>
                     @Html.DisplayFor(modelItem => item.BookTitle)
                 </td>

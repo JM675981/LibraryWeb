@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using LibraryWeb.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
+using System.Xml;
+using Microsoft.VisualBasic;
+using System.Net;
 
 namespace LibraryWeb.Data
 {
@@ -136,6 +139,40 @@ namespace LibraryWeb.Data
                 );
         }
 
+        private void SeedLoans(ModelBuilder builder)
+        {
+            builder.Entity<Loan>().HasData(
+                new Loan()
+                {
+                    LoanID = 1,
+                    BookID = 2,
+                    Username = "Alucard@Bellm.ont",
+                    DateLoaned = DateTime.Parse("4/12/2023"),
+                    DueDate = DateTime.Parse("4/26/2023"),
+                    IsLoaned = true,
+                },
+                new Loan()
+                {
+                    LoanID = 2,
+                    BookID = 3,
+                    Username = "Alucard@Bellm.ont",
+                    DateLoaned = DateTime.Parse("4/12/2023"),
+                    DueDate = DateTime.Parse("4/15/2023"),
+                    IsLoaned = true,
+                },
+            new Loan()
+            {
+                LoanID = 3,
+                BookID = 1,
+                Username = "Alucard@Bellm.ont",
+                DateLoaned = DateTime.Parse("4/12/2023"),
+                DueDate = DateTime.Parse("4/15/2023"),
+                IsLoaned = false,
+            }
+                );
+
+        }
+
         public DbSet<Book>? Book { get; set; }
         public DbSet<Loan>? Loan { get; set; }
 
@@ -146,6 +183,7 @@ namespace LibraryWeb.Data
             this.SeedRoles(builder);
             this.SeedUserRoles(builder);
             this.SeedBooks(builder);
+            this.SeedLoans(builder);
         }
     }
 }

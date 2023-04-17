@@ -200,9 +200,9 @@ namespace LibraryWeb.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1", "bea87146-4717-44c0-9285-08374b46655f", "User", null },
-                    { "2", "6bbfd87f-9287-4e25-b816-28e1f07f103e", "Librarian", null },
-                    { "3", "c2596264-1950-4e6b-9fd3-a14663e3c27b", "Admin", null }
+                    { "1", "1ce38cf1-a70a-4ed3-807d-26e84fab5a08", "User", null },
+                    { "2", "78658246-e4ac-42bf-bd9d-e6aab8e98cc1", "Librarian", null },
+                    { "3", "b81725a2-b189-44e9-80c5-d72d5fbbdcc2", "Admin", null }
                 });
 
             migrationBuilder.InsertData(
@@ -210,9 +210,9 @@ namespace LibraryWeb.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "38b276e9-b56f-404f-9571-86c49ab67ac7", 0, "3e88eb96-f593-4ab5-ac97-58ecb3a04ef3", "Alucard@Bellm.ont", true, true, null, "ALUCARD@BELLM.ONT", "ALUCARD@BELLM.ONT", "AQAAAAEAACcQAAAAEMLOgJvzYjeWW2+Dt8JShcVrKXHbDQM5YuwMReFvRs4TVfXLKd+id7CzKH+75FzGTA==", null, false, "2c607978-4327-400c-a8e5-2bec62fec660", false, "Alucard@Bellm.ont" },
-                    { "ba9c50d2-92ad-448a-aff3-a9ec499b44f0", 0, "54940cd6-4259-4e49-b30d-7e02c75519df", "Richter@Bellm.ont", true, true, null, "RICHTER@BELLM.ONT", "RICHTER@BELLM.ONT", "AQAAAAEAACcQAAAAEGplI3UMB0y4tM2uh74baJK/QFOa87DdtZMEkeoPXwZJFJscMOM0H+MMfiEtwmD3cw==", null, false, "66ba9490-ebea-423d-87cb-e814ae5997ca", false, "Richter@Bellm.ont" },
-                    { "e2eaf6fb-be20-4b9b-a071-c17566a4a6f8", 0, "1ff8be6b-9b1d-4a8e-a6e9-e6f5a1233fb1", "Dracula@Bellm.ont", true, true, null, "DRACULA@BELLM.ONT", "DRACULA@BELLM.ONT", "AQAAAAEAACcQAAAAEJA0J0PENPkGxMyKOIzljJpQdrYe3R94R/gwzZ+OzIC35dyIzWvHM3HeIAsxYmVEFw==", null, false, "a3a30e8c-c887-4b58-9f2c-e51c42692dac", false, "Dracula@Bellm.ont" }
+                    { "38b276e9-b56f-404f-9571-86c49ab67ac7", 0, "9a30d4d5-9638-4acf-b22a-777b786c7358", "Alucard@Bellm.ont", true, true, null, "ALUCARD@BELLM.ONT", "ALUCARD@BELLM.ONT", "AQAAAAEAACcQAAAAEC2L/yech7yANrazZC4KHw5NCPCnuCpbJlKCjtFabp/aPJHEyil/Al+v7Tyie6oaHg==", null, false, "87a651de-5687-4cda-872f-bff1bec259a1", false, "Alucard@Bellm.ont" },
+                    { "ba9c50d2-92ad-448a-aff3-a9ec499b44f0", 0, "ec034548-c105-43b4-a966-1b7d4cf3a0f6", "Richter@Bellm.ont", true, true, null, "RICHTER@BELLM.ONT", "RICHTER@BELLM.ONT", "AQAAAAEAACcQAAAAEOZ3+Ar9DHMier/C9Fxsa8RMkM4RZMJGea3jOWXdKgOYoZkzluTi5UFvPHoquPd8fw==", null, false, "bf303dfd-e4bc-4a0a-b3cb-0e5937c7aab7", false, "Richter@Bellm.ont" },
+                    { "e2eaf6fb-be20-4b9b-a071-c17566a4a6f8", 0, "b37aed64-ce9c-4147-94cb-82266677ea0f", "Dracula@Bellm.ont", true, true, null, "DRACULA@BELLM.ONT", "DRACULA@BELLM.ONT", "AQAAAAEAACcQAAAAENFdvyxISvTw25V/nEe9xSEEu5JFbSAF1J1MQ77qz3f9SMu2H2P69OYOrUi9S8eVYA==", null, false, "526488d3-784e-4ead-bae4-9d654c006823", false, "Dracula@Bellm.ont" }
                 });
 
             migrationBuilder.InsertData(
@@ -228,17 +228,22 @@ namespace LibraryWeb.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "1", "38b276e9-b56f-404f-9571-86c49ab67ac7" });
+                values: new object[,]
+                {
+                    { "1", "38b276e9-b56f-404f-9571-86c49ab67ac7" },
+                    { "2", "ba9c50d2-92ad-448a-aff3-a9ec499b44f0" },
+                    { "3", "e2eaf6fb-be20-4b9b-a071-c17566a4a6f8" }
+                });
 
             migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "2", "ba9c50d2-92ad-448a-aff3-a9ec499b44f0" });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "3", "e2eaf6fb-be20-4b9b-a071-c17566a4a6f8" });
+                table: "Loan",
+                columns: new[] { "LoanID", "BookID", "DateLoaned", "DueDate", "IsLoaned", "Username" },
+                values: new object[,]
+                {
+                    { 1, 2, new DateTime(2023, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), true, "Alucard@Bellm.ont" },
+                    { 2, 3, new DateTime(2023, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), true, "Alucard@Bellm.ont" },
+                    { 3, 1, new DateTime(2023, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Alucard@Bellm.ont" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

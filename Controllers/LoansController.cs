@@ -49,6 +49,7 @@ namespace LibraryWeb.Controllers
         public IActionResult Create()
         {
             ViewData["BookID"] = new SelectList(_context.Book, "BookID", "BookTitle");
+
             return View();
         }
 
@@ -61,6 +62,9 @@ namespace LibraryWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                loan.DateLoaned = DateTime.Now;
+                loan.DueDate = DateTime.Now.AddDays(14);
+
                 _context.Add(loan);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

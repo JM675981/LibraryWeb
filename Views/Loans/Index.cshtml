@@ -28,6 +28,7 @@
                 @Html.DisplayNameFor(model => model.IsLoaned)
             </th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -48,11 +49,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.IsLoaned)
             </td>
-            <td>
+                <td>
                 <a asp-action="Edit" asp-route-id="@item.LoanID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.LoanID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.LoanID">Delete</a>
             </td>
+                @if (item.DueDate < DateTime.Now & item.IsLoaned)
+                {
+                    <td style="color: red">Overdue</td>
+                }
         </tr>
 }
     </tbody>

@@ -16,15 +16,11 @@ namespace LibraryWeb.Models
         public string Username { get; set; }
 
         //Some automation with some manual input
-        [Required(ErrorMessage = "Please enter the date loaned")]
         [DisplayName("Date Loaned")]
         public DateTime DateLoaned { get; set; }
-        [Required(ErrorMessage = "Please enter the date due")]
         [DisplayName("Due Date")]
         public DateTime DueDate { get; set; }
 
-        //Might end up automated
-        [Required(ErrorMessage = "Please clarify if the book is still loaned")]
         [DisplayName("Loaned")]
         public bool IsLoaned { get; set; }
     }
