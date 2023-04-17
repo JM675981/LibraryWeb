@@ -1,7 +1,7 @@
 ﻿@model LibraryWeb.Models.Book
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Book";
 }
 
 <h1>Edit</h1>
@@ -32,6 +32,7 @@
                 <span asp-validation-for="Count" class="text-danger"></span>
             </div>
 
+            <br />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
                 <a asp-action="Index">Cancel</a>

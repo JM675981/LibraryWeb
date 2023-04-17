@@ -5,10 +5,10 @@
 @inject UserManager<IdentityUser> userManager
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Book List";
 }
 
-<h1>Index</h1>
+<h1>Book List</h1>
 
 @if (signInManager.IsSignedIn(User))
 {
@@ -74,8 +74,6 @@
                     @Html.DisplayFor(modelItem => item.EditDate)
                 </td>
                 <td>
-
-                    <a asp-action="Details" asp-route-id="@item.BookID">Details</a>
 
                     @if (signInManager.IsSignedIn(User))
                     {
