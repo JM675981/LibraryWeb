@@ -32,16 +32,19 @@
             <th>
                 @Html.DisplayNameFor(model => model.Count)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddedUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastEditUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EditDate)
-            </th>
-            <th></th>
+            @if (signInManager.IsSignedIn(User))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.AddedUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastEditUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EditDate)
+                </th>
+                <th></th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -64,27 +67,27 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Count)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AddedUser)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastEditUser)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EditDate)
-                </td>
-                <td>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddedUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastEditUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EditDate)
+                    </td>
+                    <td>
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.BookID">Edit</a>
 
-                    @if (signInManager.IsSignedIn(User))
-                    {
-                        <a asp-action="Edit" asp-route-id="@item.BookID">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.BookID">Delete</a>
 
-                        <a asp-action="Delete" asp-route-id="@item.BookID">Delete</a>
-
-                    }
-
-
-                </td>
+                        }
+                    </td>
+                }
             </tr>
         }
     </tbody>
