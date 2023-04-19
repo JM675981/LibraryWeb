@@ -95,10 +95,11 @@ namespace LibraryWeb.Migrations
                     b.Property<int>("BookID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateLoaned")
+                    b.Property<DateTime?>("DateLoaned")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DueDate")
+                    b.Property<DateTime?>("DueDate")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsLoaned")
@@ -174,20 +175,23 @@ namespace LibraryWeb.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "1ce38cf1-a70a-4ed3-807d-26e84fab5a08",
-                            Name = "User"
+                            ConcurrencyStamp = "50cfe421-bf94-4bc2-bc6b-aa376dbe55ef",
+                            Name = "User",
+                            NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "78658246-e4ac-42bf-bd9d-e6aab8e98cc1",
-                            Name = "Librarian"
+                            ConcurrencyStamp = "2285fc93-4551-4a8d-ba4e-721ee3ccc8dc",
+                            Name = "Librarian",
+                            NormalizedName = "LIBRARIAN"
                         },
                         new
                         {
                             Id = "3",
-                            ConcurrencyStamp = "b81725a2-b189-44e9-80c5-d72d5fbbdcc2",
-                            Name = "Admin"
+                            ConcurrencyStamp = "b4e1c7a9-378a-44f6-8796-d848fe444eb9",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
                         });
                 });
 
@@ -285,15 +289,15 @@ namespace LibraryWeb.Migrations
                         {
                             Id = "38b276e9-b56f-404f-9571-86c49ab67ac7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9a30d4d5-9638-4acf-b22a-777b786c7358",
+                            ConcurrencyStamp = "62b9c275-20d9-493c-b479-03990d5bd6ae",
                             Email = "Alucard@Bellm.ont",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
                             NormalizedEmail = "ALUCARD@BELLM.ONT",
                             NormalizedUserName = "ALUCARD@BELLM.ONT",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC2L/yech7yANrazZC4KHw5NCPCnuCpbJlKCjtFabp/aPJHEyil/Al+v7Tyie6oaHg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL/EMi/yvwQa8i1knaYSAd8rPWKFEZ+wHioNHaQDKZDVzhJatbQLPH++aLsF1h3D/A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "87a651de-5687-4cda-872f-bff1bec259a1",
+                            SecurityStamp = "3c218f5c-12f6-4e55-92ea-10af3b9c9998",
                             TwoFactorEnabled = false,
                             UserName = "Alucard@Bellm.ont"
                         },
@@ -301,15 +305,15 @@ namespace LibraryWeb.Migrations
                         {
                             Id = "ba9c50d2-92ad-448a-aff3-a9ec499b44f0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ec034548-c105-43b4-a966-1b7d4cf3a0f6",
+                            ConcurrencyStamp = "3a444386-5427-4ad5-b680-962b22a92b37",
                             Email = "Richter@Bellm.ont",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
                             NormalizedEmail = "RICHTER@BELLM.ONT",
                             NormalizedUserName = "RICHTER@BELLM.ONT",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOZ3+Ar9DHMier/C9Fxsa8RMkM4RZMJGea3jOWXdKgOYoZkzluTi5UFvPHoquPd8fw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGkrEUcfYLoHww3vedxrudI/IeZ+mGEmOSFfk53z3v13ZEGbzhh41lVkS04PWAlNmg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bf303dfd-e4bc-4a0a-b3cb-0e5937c7aab7",
+                            SecurityStamp = "59003478-5116-47f8-86d6-b3df72689293",
                             TwoFactorEnabled = false,
                             UserName = "Richter@Bellm.ont"
                         },
@@ -317,15 +321,15 @@ namespace LibraryWeb.Migrations
                         {
                             Id = "e2eaf6fb-be20-4b9b-a071-c17566a4a6f8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b37aed64-ce9c-4147-94cb-82266677ea0f",
+                            ConcurrencyStamp = "cdfb5b16-8c67-4540-ae66-ee57fea68ab4",
                             Email = "Dracula@Bellm.ont",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
                             NormalizedEmail = "DRACULA@BELLM.ONT",
                             NormalizedUserName = "DRACULA@BELLM.ONT",
-                            PasswordHash = "AQAAAAEAACcQAAAAENFdvyxISvTw25V/nEe9xSEEu5JFbSAF1J1MQ77qz3f9SMu2H2P69OYOrUi9S8eVYA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDyAbSs7k5OZlNiC4LjlYcHcD2R9yRlsBAT6oDvtNb5pe/M9HreKPSOCeEbB7vvAEA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "526488d3-784e-4ead-bae4-9d654c006823",
+                            SecurityStamp = "93a64d26-eca5-464d-906d-360eff2d4ad9",
                             TwoFactorEnabled = false,
                             UserName = "Dracula@Bellm.ont"
                         });

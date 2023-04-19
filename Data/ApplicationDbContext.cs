@@ -67,17 +67,20 @@ namespace LibraryWeb.Data
                 new IdentityRole()
                 {
                     Id = "1",
-                    Name = "User"
+                    Name = "User",
+                    NormalizedName = "USER"
                 },
                 new IdentityRole()
                 {
                     Id = "2",
-                    Name = "Librarian"
+                    Name = "Librarian",
+                    NormalizedName = "LIBRARIAN"
                 },
                 new IdentityRole()
                 {
                     Id = "3",
-                    Name = "Admin"
+                    Name = "Admin",
+                    NormalizedName = "ADMIN"
                 }
                 );
         }

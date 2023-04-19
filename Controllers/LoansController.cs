@@ -62,6 +62,7 @@ namespace LibraryWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Found AddDays function: https://stackoverflow.com/questions/6847346/why-is-there-no-datetime-addweeks-and-how-can-i-get-a-datetime-object-for-52
                 loan.DateLoaned = DateTime.Now;
                 loan.DueDate = DateTime.Now.AddDays(14);
 

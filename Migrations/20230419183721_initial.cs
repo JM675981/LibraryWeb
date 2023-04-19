@@ -180,7 +180,7 @@ namespace LibraryWeb.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BookID = table.Column<int>(type: "int", nullable: false),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateLoaned = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateLoaned = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DueDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsLoaned = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -200,9 +200,9 @@ namespace LibraryWeb.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1", "1ce38cf1-a70a-4ed3-807d-26e84fab5a08", "User", null },
-                    { "2", "78658246-e4ac-42bf-bd9d-e6aab8e98cc1", "Librarian", null },
-                    { "3", "b81725a2-b189-44e9-80c5-d72d5fbbdcc2", "Admin", null }
+                    { "1", "50cfe421-bf94-4bc2-bc6b-aa376dbe55ef", "User", "USER" },
+                    { "2", "2285fc93-4551-4a8d-ba4e-721ee3ccc8dc", "Librarian", "LIBRARIAN" },
+                    { "3", "b4e1c7a9-378a-44f6-8796-d848fe444eb9", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -210,9 +210,9 @@ namespace LibraryWeb.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "38b276e9-b56f-404f-9571-86c49ab67ac7", 0, "9a30d4d5-9638-4acf-b22a-777b786c7358", "Alucard@Bellm.ont", true, true, null, "ALUCARD@BELLM.ONT", "ALUCARD@BELLM.ONT", "AQAAAAEAACcQAAAAEC2L/yech7yANrazZC4KHw5NCPCnuCpbJlKCjtFabp/aPJHEyil/Al+v7Tyie6oaHg==", null, false, "87a651de-5687-4cda-872f-bff1bec259a1", false, "Alucard@Bellm.ont" },
-                    { "ba9c50d2-92ad-448a-aff3-a9ec499b44f0", 0, "ec034548-c105-43b4-a966-1b7d4cf3a0f6", "Richter@Bellm.ont", true, true, null, "RICHTER@BELLM.ONT", "RICHTER@BELLM.ONT", "AQAAAAEAACcQAAAAEOZ3+Ar9DHMier/C9Fxsa8RMkM4RZMJGea3jOWXdKgOYoZkzluTi5UFvPHoquPd8fw==", null, false, "bf303dfd-e4bc-4a0a-b3cb-0e5937c7aab7", false, "Richter@Bellm.ont" },
-                    { "e2eaf6fb-be20-4b9b-a071-c17566a4a6f8", 0, "b37aed64-ce9c-4147-94cb-82266677ea0f", "Dracula@Bellm.ont", true, true, null, "DRACULA@BELLM.ONT", "DRACULA@BELLM.ONT", "AQAAAAEAACcQAAAAENFdvyxISvTw25V/nEe9xSEEu5JFbSAF1J1MQ77qz3f9SMu2H2P69OYOrUi9S8eVYA==", null, false, "526488d3-784e-4ead-bae4-9d654c006823", false, "Dracula@Bellm.ont" }
+                    { "38b276e9-b56f-404f-9571-86c49ab67ac7", 0, "62b9c275-20d9-493c-b479-03990d5bd6ae", "Alucard@Bellm.ont", true, true, null, "ALUCARD@BELLM.ONT", "ALUCARD@BELLM.ONT", "AQAAAAEAACcQAAAAEL/EMi/yvwQa8i1knaYSAd8rPWKFEZ+wHioNHaQDKZDVzhJatbQLPH++aLsF1h3D/A==", null, false, "3c218f5c-12f6-4e55-92ea-10af3b9c9998", false, "Alucard@Bellm.ont" },
+                    { "ba9c50d2-92ad-448a-aff3-a9ec499b44f0", 0, "3a444386-5427-4ad5-b680-962b22a92b37", "Richter@Bellm.ont", true, true, null, "RICHTER@BELLM.ONT", "RICHTER@BELLM.ONT", "AQAAAAEAACcQAAAAEGkrEUcfYLoHww3vedxrudI/IeZ+mGEmOSFfk53z3v13ZEGbzhh41lVkS04PWAlNmg==", null, false, "59003478-5116-47f8-86d6-b3df72689293", false, "Richter@Bellm.ont" },
+                    { "e2eaf6fb-be20-4b9b-a071-c17566a4a6f8", 0, "cdfb5b16-8c67-4540-ae66-ee57fea68ab4", "Dracula@Bellm.ont", true, true, null, "DRACULA@BELLM.ONT", "DRACULA@BELLM.ONT", "AQAAAAEAACcQAAAAEDyAbSs7k5OZlNiC4LjlYcHcD2R9yRlsBAT6oDvtNb5pe/M9HreKPSOCeEbB7vvAEA==", null, false, "93a64d26-eca5-464d-906d-360eff2d4ad9", false, "Dracula@Bellm.ont" }
                 });
 
             migrationBuilder.InsertData(
