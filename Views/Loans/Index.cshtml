@@ -1,10 +1,72 @@
 ﻿@model IEnumerable<LibraryWeb.Models.Loan>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> userManager
 
 @{
     ViewData["Title"] = "Loaned List";
 }
 
+<!--Check out for User-->
 <h2>Checked Out</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateLoaned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsLoaned)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @if (item.Username == User.Identity.Name & item.IsLoaned)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Book.BookTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateLoaned)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DueDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsLoaned)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.LoanID">Details</a>
+                    </td>
+                    @if (item.DueDate < DateTime.Now & item.IsLoaned)
+                    {
+                        <td style="color: red">Overdue</td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<!--Check out for Admin-->
+<h2>Loaned Books</h2>
 
 <table class="table">
     <thead>
@@ -88,8 +150,6 @@
     <tbody>
         @foreach (var item in Model)
         {
-            @if (!item.IsLoaned)
-            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Book.BookTitle)
@@ -112,7 +172,6 @@
                         <a asp-action="Delete" asp-route-id="@item.LoanID">Delete</a>
                     </td>
                 </tr>
-            }
         }
     </tbody>
 </table>
